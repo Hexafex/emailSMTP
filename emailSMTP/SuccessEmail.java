@@ -21,7 +21,7 @@ public class SuccessEmail {
 	            Session session = Session.getInstance(prop,
 	                    new javax.mail.Authenticator() {
 	                        protected PasswordAuthentication getPasswordAuthentication() {
-	                            return new PasswordAuthentication(a, b);//your email, password
+	                            return new PasswordAuthentication(emailFrom, password);//your email, password
 	                        }
 	                    });
 
@@ -34,7 +34,7 @@ public class SuccessEmail {
 	                        InternetAddress.parse(emailToSendTo)//email to send to
 	                );
 	                message.setSubject("Testing Gmail TLS");
-	                message.setText("Dear" + c
+	                message.setText("Dear " + emailToSendTo
 	                        + "\n\n Thank you for registering with ABC job portal.!"
 	                		+ "\n We are delighted to have you with us and hope to provide the services"
 	                        + "\n needed in the website."
